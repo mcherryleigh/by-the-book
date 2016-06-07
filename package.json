@@ -1,0 +1,37 @@
+{
+  "name": "by-the-book",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Arg validation with json-schema models for functions using options objects",
+  "author": "Michael Cherry-Leigh",
+  "main": "OptsChecker.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcherryleigh/by-the-book"
+  },
+  "bugs": {
+    "url": "https://github.com/mcherryleigh/by-the-book/issues"
+  },
+  "keywords": [
+    "validation",
+    "validate",
+    "opts",
+    "object",
+    "objects",
+    "argument",
+    "arguments",
+    "test",
+    "util",
+    "schema",
+    "model"
+  ],
+  "dependencies": {
+    "ajv": "*"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
+}

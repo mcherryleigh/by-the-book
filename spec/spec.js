@@ -1,0 +1,50 @@
+let OptsChecker = require('../OptsChecker.js');
+let schema = {
+    "properties": {
+        "smaller": {
+            type: 'number',
+            maximum: 3
+        },
+        "larger": { type: 'number' }
+    }
+};
+//function passes if the schema passes true will return otherwise and object with errors will
+let OC = new OptsChecker(schema, function(schema){
+    return true;
+});
+describe("An OptsChecker", function() {
+    it("returns true when opts obj is valid for schema", function() {
+        let validData = {
+            smaller: 1,
+            larger: 3
+        };
+        expect(OC.validateOptsObject(validData)).toBe(true);
+    });
+    it("returns reasons when opts obj is invalid for schema", function() {
+        let invalidData = {
+            smaller: 100,
+            larger: 'x'
+        };
+        expect(OC.validateOptsObject(invalidData)).toEqual([
+            {
+                keyword: 'maximum',
+                dataPath: '.smaller',
+                schemaPath: '#/properties/smaller/maximum',
+                params: {
+                    comparison: '<=',
+                    limit: 3,
+                    exclusive: false
+                },
+                message: 'should be <= 3'
+            },{
+                keyword: 'type',
+                dataPath: '.larger',
+                schemaPath: '#/properties/larger/type',
+                params: {
+                    type: 'number'
+                },
+                message: 'should be number'
+            }
+        ]);
+    });
+});
