@@ -8,7 +8,7 @@ let schema = {
         "larger": { type: 'number' }
     }
 };
-//function passes if the schema passes true will return otherwise and object with errors will
+//if the schema passes true will return otherwise an object with error messages will
 let OC = new OptsChecker(schema, function(schema){
     return true;
 });
