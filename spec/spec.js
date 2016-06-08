@@ -1,3 +1,4 @@
+"use strict";
 let OptsChecker = require('../OptsChecker.js');
 let schema = {
     "properties": {
