@@ -10,10 +10,15 @@ let schema = {
     }
 };
 //if the schema passes true will return otherwise an object with error messages will
-let OC = new OptsChecker(schema, function(schema){
-    return true;
-});
+let OC = new OptsChecker(schema, //schema obj
+    function(){ //return a true if it passes
+        return true;
+    }, function(err){ //return the error if it fails
+        return err;
+    }
+);
 describe("An OptsChecker", function() {
+
     it("returns true when opts obj is valid for schema", function() {
         let validData = {
             smaller: 1,
@@ -21,6 +26,7 @@ describe("An OptsChecker", function() {
         };
         expect(OC.validateOptsObject(validData)).toBe(true);
     });
+
     it("returns reasons when opts obj is invalid for schema", function() {
         let invalidData = {
             smaller: 100,
@@ -48,4 +54,5 @@ describe("An OptsChecker", function() {
             }
         ]);
     });
+
 });
