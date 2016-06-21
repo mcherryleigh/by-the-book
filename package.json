@@ -2,7 +2,7 @@
   "name": "by-the-book",
   "version": "0.0.0",
   "private": false,
-  "description": "Arg validation with json-schema models for functions using options objects",
+  "description": "Opts object validation with json-schema models for functions using opt objects arguments",
   "author": "Michael Cherry-Leigh",
   "main": "OptsChecker.js",
   "scripts": {
