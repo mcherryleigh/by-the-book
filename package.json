@@ -32,6 +32,6 @@
     "ajv": "*"
   },
   "devDependencies": {
-    "jasmine": "^2.4.1"
+    "jasmine": "^3.3.1"
   }
 }
